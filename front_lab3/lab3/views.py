@@ -15,8 +15,12 @@ def home(request):
 def search(request):
 	#dato que se puso en el buscador
 	query = request.GET.get('q')
-
+	#se hace una copia de lo buscado
+	nombre = query
+	
+	
 	#obtener json desde API
+	query = query.replace(' ',"%20")
 	url = 'http://192.168.1.155/'+query
 	
 	
@@ -43,5 +47,5 @@ def search(request):
 	t_resp = end - start
 
 	#datos que se envían al html
-	context = {'data': data,'query':query, 't_resp':t_resp, 'test':cont}
+	context = {'data': data,'query':query, 't_resp':t_resp, 'test':cont,'name':nombre}
 	return render(request,"search.html",context)
