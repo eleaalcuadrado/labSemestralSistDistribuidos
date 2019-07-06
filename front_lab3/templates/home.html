@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hola</title>
+</head>
+<body>
+<hr>
+<h1 class="h3 mb-4 text-gray-800">Buscar</h1>
+<hr>
+<br>
+Ingresar nombre del director
+<form method="GET" action="{% url 'search' %}">
+	<input  name="q" value="{{request.GET.q}}" placeholder="Ej: Juan Pérez">
+	<button class="btn btn-success" type="submit">Buscar</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Buscador</title>
+</head>
+<body>
+<hr>
+<h1 class="h3 mb-4 text-gray-800">Buscar</h1>
+<hr>
+<br>
+Ingresar nombre del director
+<form method="GET" action="{% url 'search' %}">
+	<input  name="q" value="{{request.GET.q}}" placeholder="">
+	<button class="btn btn-success" type="submit">Buscar</button>
+</form>
+(Tiempo de respuesta: {{t_resp}})
+<br>
+<p>Datos para el director: {{query}}.</p>
+
+<div class="card border-dark" >
+	<div class="panel-body">
+		<table width="70%" class="tabe table-striped table-bordered table-hover" id="dataTable">
+			<thead>
+				<tr>
+					<th>Ceremony</th>
+					<th>Year</th>
+					<th>Category</th>
+					<th>Outcome</th>
+					<th>Original language</th>
+				</tr>
+			</thead>
+			<tbody align="center" >
+				{%for obj  in data%}
+
+					<td>{{obj.0}}</td>
+					<td>{{obj.1}}</td>
+					<td>{{obj.2}}</td>
+					<td>{{obj.3}}</td>
+					<td>{{obj.4}}</td>
+				</tr>
+				{%endfor%}
+			</tbody>
+		</table>
+		
+	</div>
+</div>
+</body>
+</html>
