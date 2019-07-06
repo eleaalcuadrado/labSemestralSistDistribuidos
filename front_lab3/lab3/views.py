@@ -1,6 +1,7 @@
 from django.shortcuts import render
 import urllib.request
 import json
+import time
 
 
 
@@ -18,9 +19,14 @@ def search(request):
 	#obtener json desde API
 	url = 'http://192.168.1.155/'+query
 	
+	
+	#tiempo inicio
+	start = time.time()
 	req = urllib.request.Request(url)
 	r = urllib.request.urlopen(req).read()
 	cont = json.loads(r.decode('utf-8'))
+	#tiempo fin 
+	end = time.time()
 
 	#transformando json a una lista
 	data = []
@@ -34,7 +40,7 @@ def search(request):
 		data.append([elem[atr1], elem[atr2], elem[atr3], elem[atr4], elem[atr5]])
 
 	#tiempo respuesta de consulta	
-	t_resp = -1000
+	t_resp = end - start
 
 	#datos que se envían al html
 	context = {'data': data,'query':query, 't_resp':t_resp, 'test':cont}
