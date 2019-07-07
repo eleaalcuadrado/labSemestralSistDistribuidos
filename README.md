@@ -14,6 +14,12 @@ La arquitectura diseñada como se puede ver en la imagen, en ella se tiene 4 com
 - Servidores Backend: Son los responsable de servir las consultas mediante una api rest. En este caso los servidores de backend son en NodeJS.
 - Base de datos: En la base de datos se encuentran los datos utilizados para este laboratorio. La BD elegida fue postgres, además esta se replicó para cada servidor y particiono para realizar consultas en paralelo en BD.
 ## Análisis del rendimiento de la arquitectura
+Para las pruebas de la arquitectura se opto por ocupar el dataset de directores de cine disponible en Kaggle. La cual cuenta con 220 mil filas y 6 columnas. La consulta que se realiza es por el nombre de un director y esta retorna todos los premios que fue invitado, además que puesto logro, nombre de la ceremonia y el año.A continuación se muestra un ejemplo.
+
+![buscar](https://user-images.githubusercontent.com/19898908/60763402-b6b2cb80-a041-11e9-81e8-157955f2e793.PNG)
+
+Las siguientes imagenes son de las pruebas de estrés que se realizaron a los servidores mediante peticiones continuas con el comando curl. Para esto se fueron aumentando la cantidad de conexiones realizadas.
+
 ![8conex](https://user-images.githubusercontent.com/19898908/60762844-39358e00-a036-11e9-9310-5e98bc7dbaac.PNG)
 ![14conex](https://user-images.githubusercontent.com/19898908/60762902-1e174e00-a037-11e9-968d-1cbea78c0b08.PNG)
 ![21conex](https://user-images.githubusercontent.com/19898908/60762852-566a5c80-a036-11e9-8de4-18d4006514fb.PNG)
