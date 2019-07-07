@@ -33,6 +33,7 @@ Como se puede ver de las imagenes y el cuadro resumen a medida que se agregan co
 La tolerancia a fallos se define como "la propiedad que le permite a un sistema seguir funcionando correctamente en caso de fallo de uno o varios de sus componentes"([Wikipedia](https://es.wikipedia.org/wiki/Diseño_de_tolerancia_a_fallos#Criterios)). Esta arquitectura posee una gran toleracia a fallos ya que al contar con más de un servidor y, un proxy y balanceador de carga como lo es HAProxy, el cual elige el servidor menos cargado en el sistema. Permite además en caso de falla de alguno de ellos, detectada al momento de hacer la petición que si no es respondida luego de 5 segundos, direccionar a alguno que esté disponible. Provee por ende una alta disponibilidad en el sistema.
 
 ## Selección del servidor o/y enrutamiento de la consulta realizada por el cliente en base a una métrica
+La selección del servidor y enrutamiento está a cargo de HAProxy quien cumple la característica de ser un enrutador y balanceador de carga. En este caso la métrica que se escogió para seleccionar un servidor es el de menor conexiones, se escogió esta métrica dado que los 3 servidores de backend poseen las mismas características, por lo cual una métrica de rendimiento para los 3 servidores eran muy similares considerando el tiempo de respuesta de cada uno de ellos.
 
 ## Paralelización de la consulta
 
