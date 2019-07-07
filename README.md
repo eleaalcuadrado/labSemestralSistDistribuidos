@@ -9,6 +9,11 @@
 ![Untitled Diagram](https://user-images.githubusercontent.com/19898908/60762078-89582480-a025-11e9-8b5b-e7913a3dfe25.png)
 
 ## Análisis del rendimiento de la arquitectura
+La arquitectura diseñada se puede ver en la imagen, en ella se tiene 4 componentes principales:
+-FrontEnd: encargado de la interacción con el usuario. Este fue desarrollado en Python con el framework Django.
+-Haproxy: Actúa tanto como enrutador y balanceador, es decir los clientes que ingresan al frontend y hacen una consulta es el HAproxy quien los redirige a alguno de servidores de backend para ser respondida su consulta. Para el caso de este laboratorio se utilizó un frontend y 3 servidores de backend.
+-Servidores Backend: Son los responsable de servir las consultas mediante una api rest. En este caso los servidores de backend son en NodeJS.
+-Base de datos: En la base de datos se encuentran los datos utilizados para este laboratorio. La BD elegida fue postgres, además esta se replicó para cada servidor y particiono para realizar consultas en paralelo en BD.
 
 ## Análisis sobre tolerancia a fallas y disponibilidad por parte del sistema
 La tolerancia a fallos se define como "la propiedad que le permite a un sistema seguir funcionando correctamente en caso de fallo de uno o varios de sus componentes"([Wikipedia](https://es.wikipedia.org/wiki/Diseño_de_tolerancia_a_fallos#Criterios)). Esta arquitectura posee una gran toleracia a fallos ya que al contar con más de un servidor y, un proxy y balanceador de carga como lo es HAProxy, el cual elige el servidor menos cargado en el sistema. Permite además en caso de falla de alguno de ellos, detectada al momento de hacer la petición que si no es respondida luego de 5 segundos, direccionar a alguno que esté disponible. Provee por ende una alta disponibilidad en el sistema.
