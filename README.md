@@ -28,6 +28,9 @@ La arquitectura diseñada como se puede ver en la imagen, en ella se tiene 4 com
 
 Como se puede ver de las imagenes y el cuadro resumen a medida que se agregan conexiones a los servidores el tiempo de respuesta va en aumento este se puede ver más claramente en el gráfico a continuación.
 ![grafico_conex_time](https://user-images.githubusercontent.com/19898908/60762985-cc6fc300-a038-11e9-8f3a-5d304a51811e.PNG)
+Los tiempos de respuesta mejorarían sustancialmente si se añadiera un cache en los servidores antes de ir a BD, si agregamos cache a la arquitectura presentada anteriormente se vería como la siguiente imagen.
+
+![Untitled Diagram](https://user-images.githubusercontent.com/19898908/60763191-16f33e80-a03d-11e9-9c7d-ec8eaad8dcc5.png)
 
 ## Análisis sobre tolerancia a fallas y disponibilidad por parte del sistema
 La tolerancia a fallos se define como "la propiedad que le permite a un sistema seguir funcionando correctamente en caso de fallo de uno o varios de sus componentes"([Wikipedia](https://es.wikipedia.org/wiki/Diseño_de_tolerancia_a_fallos#Criterios)). Esta arquitectura posee una gran toleracia a fallos ya que al contar con más de un servidor y, un proxy y balanceador de carga como lo es HAProxy, el cual elige el servidor menos cargado en el sistema. Permite además en caso de falla de alguno de ellos, detectada al momento de hacer la petición que si no es respondida luego de 5 segundos, direccionar a alguno que esté disponible. Provee por ende una alta disponibilidad en el sistema.
