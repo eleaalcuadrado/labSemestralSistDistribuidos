@@ -28,6 +28,7 @@ La arquitectura diseñada como se puede ver en la imagen, en ella se tiene 4 com
 
 Como se puede ver de las imagenes y el cuadro resumen a medida que se agregan conexiones a los servidores el tiempo de respuesta va en aumento este se puede ver más claramente en el gráfico a continuación.
 ![grafico_conex_time](https://user-images.githubusercontent.com/19898908/60762985-cc6fc300-a038-11e9-8f3a-5d304a51811e.PNG)
+
 Los tiempos de respuesta mejorarían sustancialmente si se añadiera un cache en los servidores antes de ir a BD, si agregamos cache a la arquitectura presentada anteriormente se vería como la siguiente imagen.
 
 ![Untitled Diagram](https://user-images.githubusercontent.com/19898908/60763191-16f33e80-a03d-11e9-9c7d-ec8eaad8dcc5.png)
