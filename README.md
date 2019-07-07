@@ -44,3 +44,42 @@ La paralelización  de la consulta a nivel de servidores se da ya que se pueden 
 Para el caso de la consulta a nivel de base datos, se utilizó postgres para distribuir la base de datos en otras 3 bases de datos, en postgres llamadas particiones, entonces de este modo las consultas se hace en paralelo en estas 3 particiones con lo cual disminuye los tiempos de procesamiento de la base de datos.
 
 ## Análisis de la distribución de la base de datos
+
+
+
+## Refencias
+- Partitioning Improvements in PostgreSQL 11: 
+
+https://www.2ndquadrant.com/en/blog/partitioning-improvements-pg11/
+
+- Configuring Load Balancer with HAProxy and Node.js:
+
+https://www.webcodegeeks.com/javascript/node-js/configuring-load-balancer-with-haproxy-and-node-js/
+
+- Building a NodeJS web server with HAProxy and Let’s Encrypt on Debian Stretch:
+
+https://codeburst.io/building-a-nodejs-web-server-with-haproxy-and-lets-encrypt-on-debian-stretch-2fbf16cfba3a
+
+- How to Set Up HAProxy for Load Balancing on Ubuntu 16.04:
+
+https://dzone.com/articles/how-to-setup-haproxy-for-load-balancing-on-ubuntu
+
+- How to Use HAProxy for Load Balancing: 
+
+https://www.linode.com/docs/uptime/loadbalancing/how-to-use-haproxy-for-load-balancing/
+
+- Bases de datos distribuidas en PostgresSQL:
+
+http://www.v-espino.com/~chema/daw1/tutoriales/postgres/distribuidas.htm
+
+- Setting up a RESTful API with Node.js and PostgreSQL:
+
+https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/
+
+- How to Configure HAProxy as a Proxy and Load Balancer: 
+
+https://dzone.com/articles/how-to-configure-ha-proxy-as-a-proxy-and-loadbalan
+
+- Tutorial Básico node.js: Cómo Configurar un Servidor HTTP:
+
+https://www.luisllamas.es/tutorial-nodejs-montar-servidor/
