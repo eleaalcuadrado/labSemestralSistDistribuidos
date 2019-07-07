@@ -50,7 +50,7 @@ La paralelización  de la consulta a nivel de servidores se da ya que se pueden 
 Para el caso de la consulta a nivel de base datos, se utilizó postgres para distribuir la base de datos en otras 3 bases de datos, en postgres llamadas particiones, entonces de este modo las consultas se hace en paralelo en estas 3 particiones con lo cual disminuye los tiempos de procesamiento de la base de datos.
 
 ## Análisis de la distribución de la base de datos
-
+Como se mencionó anteriormente para la base de datos se utilizó Postgres el cual tiene entre sus características distribuir las bases datos mediante tablas hash según la cantidad de particiones que se desean, en este caso se escogió particionar la BD en 3, dado que este número se ajusta a la cantidad de datos y un mayor número de particiones podría ser perjudicial dado que los tiempos de comunicación entre particiones aumentan, con lo cual los tiempos de respuestas también aumentan. Además cabe mencionar que se replicó la base de datos para cada servidor y estas a su vez fueron particionadas. 
 
 
 ## Refencias
