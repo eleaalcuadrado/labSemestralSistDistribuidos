@@ -40,5 +40,7 @@ La tolerancia a fallos se define como "la propiedad que le permite a un sistema 
 La selección del servidor y enrutamiento está a cargo de HAProxy quien cumple la característica de ser un enrutador y balanceador de carga. En este caso la métrica que se escogió para seleccionar un servidor es el de menor conexiones, se escogió esta métrica dado que los 3 servidores de backend poseen las mismas características, por lo cual una métrica de rendimiento para los 3 servidores eran muy similares considerando el tiempo de respuesta de cada uno de ellos.
 
 ## Paralelización de la consulta
+La paralelización  de la consulta a nivel de servidores se da ya que se pueden realizar  varias consultas en paralelo según la cantidad de servidores dispuestos, esto quiere decir que se pueden resolver varias consultas al mismo tiempo sin interferencia de una con otra.
+Para el caso de la consulta a nivel de base datos, se utilizó postgres para distribuir la base de datos en otras 3 bases de datos, en postgres llamadas particiones, entonces de este modo las consultas se hace en paralelo en estas 3 particiones con lo cual disminuye los tiempos de procesamiento de la base de datos.
 
 ## Análisis de la distribución de la base de datos
