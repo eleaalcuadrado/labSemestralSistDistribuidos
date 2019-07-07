@@ -93,3 +93,7 @@ https://www.luisllamas.es/tutorial-nodejs-montar-servidor/
 - Dataset:"350 000+ movies from themoviedb.org":
 
 https://www.kaggle.com/stephanerappeneau/350-000-movies-from-themoviedborg?fbclid=IwAR1-mnc_dLpuk9ZhKnpbdbRc-2YyeJs7dv4qf8H2GyPSx38c7e2WU9X25NM#220k_awards_by_directors.csv
+
+- Loading JSON object in Python using urllib.request and json modules:
+
+https://stackoverflow.com/questions/32795460/loading-json-object-in-python-using-urllib-request-and-json-modules
