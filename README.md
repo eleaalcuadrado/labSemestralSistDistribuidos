@@ -83,3 +83,7 @@ https://dzone.com/articles/how-to-configure-ha-proxy-as-a-proxy-and-loadbalan
 - Tutorial Básico node.js: Cómo Configurar un Servidor HTTP:
 
 https://www.luisllamas.es/tutorial-nodejs-montar-servidor/
+
+- Dataset:"350 000+ movies from themoviedb.org":
+
+https://www.kaggle.com/stephanerappeneau/350-000-movies-from-themoviedborg?fbclid=IwAR1-mnc_dLpuk9ZhKnpbdbRc-2YyeJs7dv4qf8H2GyPSx38c7e2WU9X25NM#220k_awards_by_directors.csv
